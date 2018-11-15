@@ -16,13 +16,43 @@
     border-radius: 42.5px;
     text-align: center;
     font-size: 32px;
-    padding: 25px 60px;
+    padding: 25px 50px;
     list-style-type: none;
     position: relative;
     margin: 0;
     /*display: none;*/
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    /*z-index: 10;*/
+}
+.phone__list .active{
+    color: #20BCC6;
+}
+.phone__list > li:not(:first-child){
+    text-align: left;
+    /*background: #15394C;*/
+    /*display: block;*/
+    /*position: relative;*/
+    /*z-index: 5;*/
+    /*padding: 0 50px;*/
+    /*display: inline-block;*/
+    /*border-radius: 42.5px 42.5px 15px 15px;*/
+    /*padding: 0 50px;*/
+
+
+}
+.phone__list > li:nth-child(2){
+    padding-top: 30px;
+    /*text-align: left;*/
+    /* Rectangle */
+    /*position: absolute;*/
+    /*width: 180px;*/
+    /*height: 412px;*/
+    /*left: 514px;*/
+    /*top: 448px;*/
+
+    /*background: #15394C;*/
+    /*border-radius: 42.5px 42.5px 15px 15px;*/
 }
 .phone__list > li:not(:first-child){
     display: none;
@@ -32,17 +62,6 @@
 .phone__list:focus li {
     display: block;
 
-    /* Rectangle */
-
-    /*position: absolute;*/
-    /*width: 180px;*/
-    /*height: 412px;*/
-    /*left: 514px;*/
-    /*top: 448px;*/
-
-    /*background: #15394C;*/
-    /*border-radius: 42.5px 42.5px 15px 15px;*/
-
 }
 .phone__list:hover,
 .phone__list:focus,
@@ -50,12 +69,12 @@
     border-color: #20BCC6;;
 }
 
-.phone__list::after {
+.phone__list > li:last-child::after {
     content: "";
     position: absolute;
     background-image: url(../../img/arrow.png);
-    /*display: inline-block;*/
-    display: none;
+    display: inline-block;
+    /*display: none;*/
     width: 21px;
     height: 13px;
     /*top: 380px;*/
@@ -76,7 +95,7 @@
 
     /*position: absolute;*/
     /*width: 368px;*/
-    /*height: 85px;*/
+    height: 85px;
     /*left: 712px;*/
     /*top: 578px;*/
     padding: 25px 55px;
@@ -97,14 +116,15 @@
     /*position: absolute;*/
     padding: 25px 75px;
     /*width: 368px;*/
-    /*height: 85px;*/
+    height: 85px;
     /*left: 712px;*/
     /*top: 448px;*/
     display: inline-block;
     background: #15394C;
     border-radius: 42.5px;
-    border: 2px solid transparent;
+    border: 5px solid transparent;
     transition: all 0.2s ease-in-out;
+
 }
 
 .input:hover,

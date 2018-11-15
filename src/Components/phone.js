@@ -5,7 +5,7 @@ const Phone = () => {
     return (
         <div className="phone">
             <ul className="phone__list">
-                <li>+15</li>
+                <li className="active">+15</li>
                 <li>+450</li>
                 <li>+280</li>
                 <li>+56</li>
