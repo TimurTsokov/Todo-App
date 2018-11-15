@@ -1,0 +1,13 @@
+.keyboard {
+    /* form */
+
+    /*position: absolute;*/
+    width: 310px;
+    height: 408px;
+    /*left: 1098px;*/
+    /*top: 448px;*/
+
+    background: #15394C;
+    border-radius: 15px;
+
+}
