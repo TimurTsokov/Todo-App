@@ -1,25 +1,37 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './sass/todo-list-item.sass'
 
-const TodoListItem = ({label, important = false}) => {
-    const Style = {
-        color: important ? 'steelblue' : 'black',
-        fontWeight: important ? 'bold' : 'normal'
-    };
-    return (
-        <span className="todo-list-item">
+
+export default class TodoListItem extends Component {
+
+    render() {
+        const {label, onDeleted, onToggleImportant, onToggleDone, done, important} = this.props;
+
+
+        let classNames = 'todo-list-item';
+        if (done) {
+            classNames += ' done'
+        }
+        if (important) {
+            classNames += ' important'
+        }
+        return (
+            <span className={classNames}>
             <span
                 className="todo-list-item-label"
-                style={Style}>
+                onClick={onToggleDone}>
                 {label}
               </span>
-            <button type="button" className="btn btn-outline-success btn-sm">
+            <button type="button"
+                    className="btn btn-outline-success btn-sm"
+                    onClick={onToggleImportant}
+            >
                 <i className="fa fa-exclamation"/>
             </button>
-            <button type="button" className="btn btn-outline-danger btn-sm">
+            <button type="button" className="btn btn-outline-danger btn-sm" onClick={onDeleted}>
                 <i className="fa fa-trash-o"/>
             </button>
         </span>
-    )
-};
-export default TodoListItem;
+        )
+    }
+}

@@ -1,13 +1,27 @@
-import React from 'react';
-import ItemStatusFilter from './item-status-filter'
+import React, {Component} from 'react';
+
 import './sass/search-panel.sass'
 
-const SearchPanel = () => {
-    return (
-        <div className="search-input">
-            <input type="text" placeholder="search"/>
-            <ItemStatusFilter/>
-        </div>
-    )
-};
-export default SearchPanel;
+export default class SearchPanel extends Component {
+
+    state = {
+        term: ''
+    };
+
+    onSearchChange = (e) => {
+        const term = e.target.value; //текущее значение imput
+        this.setState({term});
+        this.props.onSearchChange(term);
+    };
+
+    render() {
+        return (
+            <input type="text"
+                   placeholder="search"
+                   className="form-control search-input"
+                   value={this.state.term}
+                   onChange={this.onSearchChange}
+            />
+        )
+    }
+}
